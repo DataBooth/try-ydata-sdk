@@ -1,3 +1,10 @@
+# Extras
+
+data.parquet/
+.local_models/
+*.html
+*.pdf
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

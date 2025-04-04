@@ -1,10 +1,11 @@
 [project]
 name = "try-ydata-sdk"
 version = "0.1.0"
-description = "Add your description here"
+description = "Trying out ydata-sdk package"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "kagglehub>=0.3.11",
     "numpy>=2.1.3",
     "pandas>=2.2.3",
     "python-dotenv>=1.1.0",
@@ -12,6 +13,16 @@ dependencies = [
 ]
 
 [dependency-groups]
-dev = [
-    "notebook>=7.3.3",
-]
+dev = ["notebook>=7.3.3"]
+
+[tool.ruff]
+line-length = 98
+target-version = "py310"
+exclude = [".git", "venv", "__pycache__"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "ANN"]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"] # Ignore unused imports in __init__.py files
+"test_*.py" = ["ANN"] # Ignore missing type annotations in test files
